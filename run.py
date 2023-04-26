@@ -27,6 +27,7 @@ def get_sales_data():
     validate_data(sales_data)
 
 #validate input data befor allowing program to continue
+#Checking weather user inserted correct data
 def validate_data(values):
     """
     Inside the try, converts all string values into integers.
@@ -34,11 +35,15 @@ def validate_data(values):
     or if  there arent exactly 6 values.
     """
     try:
+        #Convert each values into int
+        [int(values) for values in values]
         if len(values) != 6:
             raise ValueError(f"Exactly 6 values required , you provided {len(values)}")
         
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
+
+#Check if all value are whole numbers
 
 
 
